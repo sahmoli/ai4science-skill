@@ -30,8 +30,10 @@ python3 ai4science/scripts/query_ai4science.py --lang en --days 7 --field biolog
 ## Public interfaces
 
 - JSON: `https://juanli.me/ai4science-prototype/api/v1/events.json`
-- Chinese RSS: `https://juanli.me/ai4science-prototype/feed.zh.xml`
-- English RSS: `https://juanli.me/ai4science-prototype/feed.en.xml`
+- Chinese daily brief RSS (recommended): `https://juanli.me/ai4science-prototype/feed/daily.zh.xml`
+- English daily brief RSS (recommended): `https://juanli.me/ai4science-prototype/feed/daily.en.xml`
+- Chinese full updates RSS: `https://juanli.me/ai4science-prototype/feed.zh.xml`
+- English full updates RSS: `https://juanli.me/ai4science-prototype/feed.en.xml`
 
 No API key is required. See [`ai4science/references/api.md`](ai4science/references/api.md) for the public schema and trust boundary.
 

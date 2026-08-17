@@ -30,8 +30,10 @@ python3 ai4science/scripts/query_ai4science.py --lang zh --days 7 --field biolog
 ## 公开接口
 
 - JSON：`https://juanli.me/ai4science-prototype/api/v1/events.json`
-- 中文 RSS：`https://juanli.me/ai4science-prototype/feed.zh.xml`
-- 英文 RSS：`https://juanli.me/ai4science-prototype/feed.en.xml`
+- 中文每日简报 RSS（推荐）：`https://juanli.me/ai4science-prototype/feed/daily.zh.xml`
+- 英文每日简报 RSS（推荐）：`https://juanli.me/ai4science-prototype/feed/daily.en.xml`
+- 中文完整动态 RSS：`https://juanli.me/ai4science-prototype/feed.zh.xml`
+- 英文完整动态 RSS：`https://juanli.me/ai4science-prototype/feed.en.xml`
 
 不需要 API Key。公开字段与边界见 [`ai4science/references/api.md`](ai4science/references/api.md)。
 
