@@ -37,6 +37,10 @@ python3 ai4science/scripts/query_ai4science.py --lang zh --days 7 --field biolog
 
 不需要 API Key。公开字段与边界见 [`ai4science/references/api.md`](ai4science/references/api.md)。
 
+## 时效与发布
+
+查询脚本会在每次运行时读取公开接口，因此新发布的 AI4Science 动态无需重新安装 Skill 就能获取。本仓库只在查询接口、使用说明或信任边界变化时发布；每日动态更新保留在公开阅读层，不重复复制到 Skill 仓库。
+
 ## 许可
 
 Skill 代码与文档采用 [MIT License](LICENSE)。所链接的原始资料仍遵循各自权利人的条款。

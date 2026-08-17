@@ -37,6 +37,14 @@ python3 ai4science/scripts/query_ai4science.py --lang en --days 7 --field biolog
 
 No API key is required. See [`ai4science/references/api.md`](ai4science/references/api.md) for the public schema and trust boundary.
 
+## Freshness and releases
+
+The query script reads the public endpoint at query time, so newly published
+AI4Science events are available without reinstalling this Skill. This repository
+is released when its query interface, instructions, or trust boundary changes;
+daily feed updates remain in the public reading layer rather than being copied
+into the Skill repository.
+
 ## License
 
 The Skill code and documentation are available under the [MIT License](LICENSE). Linked source materials remain subject to their respective owners' terms.
