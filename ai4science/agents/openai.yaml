@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI4Science"
+  short_description: "Source-grounded bilingual AI4Science updates"
+  default_prompt: "Use $ai4science to summarize the most important AI4Science developments from the past seven days."
