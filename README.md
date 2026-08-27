@@ -2,9 +2,9 @@
 
 A bilingual, source-grounded AI for Science feed for agents.
 
-This repository exposes the **public reading layer** of [Juan Li · AI4Science](https://juanli.me/ai4science-prototype/): publication-ready events with Chinese and English titles, edited summaries, classifications, and links to original sources. It does **not** expose the private collection, scoring, translation, review, or publishing pipeline.
+This repository exposes the **public reading layer** of [Juan Li · AI4Science](https://juanli.me/ai4science/): publication-ready events with Chinese and English titles, edited summaries, classifications, and links to original sources. It does **not** expose the private collection, scoring, translation, review, or publishing pipeline.
 
-[中文说明](README.zh-CN.md) · [Agent access page](https://juanli.me/ai4science-prototype/agent/)
+[中文说明](README.zh-CN.md) · [Agent access page](https://juanli.me/ai4science/agent/)
 
 ## Install
 
@@ -29,11 +29,11 @@ python3 ai4science/scripts/query_ai4science.py --lang en --days 7 --field biolog
 
 ## Public interfaces
 
-- JSON: `https://juanli.me/ai4science-prototype/api/v1/events.json`
-- Chinese daily brief RSS (recommended): `https://juanli.me/ai4science-prototype/feed/daily.zh.xml`
-- English daily brief RSS (recommended): `https://juanli.me/ai4science-prototype/feed/daily.en.xml`
-- Chinese full updates RSS: `https://juanli.me/ai4science-prototype/feed.zh.xml`
-- English full updates RSS: `https://juanli.me/ai4science-prototype/feed.en.xml`
+- JSON: `https://juanli.me/ai4science/api/v1/events.json`
+- Chinese daily brief RSS (recommended): `https://juanli.me/ai4science/feed/daily.zh.xml`
+- English daily brief RSS (recommended): `https://juanli.me/ai4science/feed/daily.en.xml`
+- Chinese full updates RSS: `https://juanli.me/ai4science/feed.zh.xml`
+- English full updates RSS: `https://juanli.me/ai4science/feed.en.xml`
 
 No API key is required. See [`ai4science/references/api.md`](ai4science/references/api.md) for the public schema and trust boundary.
 

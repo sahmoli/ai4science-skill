@@ -66,6 +66,49 @@ class QueryAI4ScienceTest(unittest.TestCase):
         self.assertEqual(events[0]["title"], "蛋白质模型")
         self.assertEqual(events[0]["field"], "生物与医学")
 
+    def test_fields_array_without_singular_field_still_filters(self):
+        payload = {
+            "events": [
+                {
+                    "id": "fields-only",
+                    "published_at": "2026-08-15T00:00:00Z",
+                    "fields": [
+                        {
+                            "id": "biology",
+                            "name_zh": "生物与医学",
+                            "name_en": "Biology & Medicine",
+                        }
+                    ],
+                    "topics": [],
+                    "title": {"zh": "仅 fields", "en": "Fields only"},
+                    "summary": {"zh": "摘要", "en": "Summary"},
+                    "people": [],
+                    "organizations": [],
+                    "source": {"name": "Lab"},
+                    "links": {
+                        "permalink": {
+                            "zh": "https://juanli.me/ai4science/zh/events/fields-only/",
+                            "en": "https://juanli.me/ai4science/en/events/fields-only/",
+                        }
+                    },
+                }
+            ]
+        }
+        events = MODULE.select_events(
+            payload,
+            lang="en",
+            days=7,
+            limit=10,
+            query=None,
+            field="biology",
+            now=datetime(2026, 8, 16, tzinfo=timezone.utc),
+        )
+        self.assertEqual(len(events), 1)
+        self.assertEqual(
+            events[0]["links"]["ai4science"],
+            "https://juanli.me/ai4science/en/events/fields-only/",
+        )
+
     def test_days_zero_includes_archive(self):
         events = MODULE.select_events(
             self.payload,

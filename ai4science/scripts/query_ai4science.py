@@ -11,7 +11,7 @@ from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
 
-DEFAULT_URL = "https://juanli.me/ai4science-prototype/api/v1/events.json"
+DEFAULT_URL = "https://juanli.me/ai4science/api/v1/events.json"
 
 
 def parse_datetime(value: str) -> datetime:
@@ -30,14 +30,31 @@ def fetch(url: str) -> dict:
         raise RuntimeError(f"Could not read the AI4Science endpoint: {error}") from error
 
 
+def event_fields(event: dict) -> list[dict]:
+    fields = event.get("fields")
+    if isinstance(fields, list) and fields:
+        return [item for item in fields if isinstance(item, dict)]
+    field = event.get("field")
+    if isinstance(field, dict) and field:
+        return [field]
+    return []
+
+
+def event_permalink(event: dict, lang: str) -> str:
+    links = event.get("links") or {}
+    permalink = links.get("permalink") if isinstance(links.get("permalink"), dict) else {}
+    return str(permalink.get(lang) or links.get("ai4science") or "")
+
+
 def search_text(event: dict) -> str:
     values = [
         *(event.get("title") or {}).values(),
         *(event.get("summary") or {}).values(),
-        *((event.get("field") or {}).values()),
         *(event.get("people") or []),
         *(event.get("organizations") or []),
     ]
+    for field in event_fields(event):
+        values.extend(field.values())
     for topic in event.get("topics") or []:
         values.extend(topic.values())
     return "\n".join(str(value) for value in values if value).casefold()
@@ -66,10 +83,13 @@ def select_events(
             continue
         if cutoff and published < cutoff:
             continue
-        field_data = event.get("field") or {}
-        field_values = " ".join(str(value) for value in field_data.values()).casefold()
+        fields = event_fields(event)
+        field_values = " ".join(
+            str(value) for field in fields for value in field.values()
+        ).casefold()
         if field_term and field_term not in field_values:
             continue
+        field_data = fields[0] if fields else {}
         haystack = search_text(event)
         if terms and not all(term in haystack for term in terms):
             continue
@@ -90,7 +110,11 @@ def select_events(
                 "people": event.get("people") or [],
                 "organizations": event.get("organizations") or [],
                 "source": (event.get("source") or {}).get("name"),
-                "links": event.get("links") or {},
+                "links": {
+                    **(event.get("links") or {}),
+                    "ai4science": event_permalink(event, lang)
+                    or (event.get("links") or {}).get("ai4science"),
+                },
             }
         )
         if len(selected) >= limit:

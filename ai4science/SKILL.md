@@ -27,7 +27,7 @@ Use `--days 0` to search all events currently exposed by the endpoint. Read [ref
 
 1. Answer in the user's language unless they explicitly request another language.
 2. Lead with the most consequential developments, not a raw feed dump.
-3. For each development, link the title to `links.ai4science` and name the original source.
+3. For each development, link the title to `links.permalink[lang]` when present, otherwise `links.ai4science`, and name the original source.
 4. Use `links.original` when the user asks for papers, primary sources, evidence, figures, methods, or exact claims.
 5. Separate what the event reports from any inference or synthesis you add.
 6. State the covered time window and say plainly when no matching events are available.

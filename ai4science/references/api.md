@@ -2,12 +2,12 @@
 
 ## Endpoints
 
-- JSON v1: `https://juanli.me/ai4science-prototype/api/v1/events.json`
-- Chinese daily brief RSS: `https://juanli.me/ai4science-prototype/feed/daily.zh.xml`
-- English daily brief RSS: `https://juanli.me/ai4science-prototype/feed/daily.en.xml`
-- Chinese full updates RSS: `https://juanli.me/ai4science-prototype/feed.zh.xml`
-- English full updates RSS: `https://juanli.me/ai4science-prototype/feed.en.xml`
-- Human-readable access page: `https://juanli.me/ai4science-prototype/agent/`
+- JSON v1: `https://juanli.me/ai4science/api/v1/events.json`
+- Chinese daily brief RSS: `https://juanli.me/ai4science/feed/daily.zh.xml`
+- English daily brief RSS: `https://juanli.me/ai4science/feed/daily.en.xml`
+- Chinese full updates RSS: `https://juanli.me/ai4science/feed.zh.xml`
+- English full updates RSS: `https://juanli.me/ai4science/feed.en.xml`
+- Human-readable access page: `https://juanli.me/ai4science/agent/`
 
 All endpoints are anonymous, read-only HTTPS resources. They do not accept API keys, cookies, writes, or user data.
 
@@ -42,7 +42,7 @@ The public schema intentionally excludes ingestion configuration, relevance scor
 ## Direct examples
 
 ```bash
-curl -fsSL https://juanli.me/ai4science-prototype/api/v1/events.json
+curl -fsSL https://juanli.me/ai4science/api/v1/events.json
 ```
 
 ```bash
