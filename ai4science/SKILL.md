@@ -27,8 +27,8 @@ Use `--days 0` to search all events currently exposed by the endpoint. Read [ref
 
 1. Answer in the user's language unless they explicitly request another language.
 2. Lead with the most consequential developments, not a raw feed dump.
-3. For each development, link the title to `links.permalink[lang]` when present, otherwise `links.ai4science`, and name the original source.
-4. Use `links.original` when the user asks for papers, primary sources, evidence, figures, methods, or exact claims.
+3. For each development, link the title to `event_url` or `links.permalink[lang]` when present, otherwise `links.ai4science`, and name the original source. `links.ai4science` is a deprecated hash URL.
+4. Use `links.original` when the user asks for papers, primary sources, evidence, figures, methods, or exact claims. When `summary_type` is `source_abstract`, describe the text as a source abstract, not as an edited AI4Science guide.
 5. Separate what the event reports from any inference or synthesis you add.
 6. State the covered time window and say plainly when no matching events are available.
 7. Describe `published_at` as the event time exposed by the public reading layer. Do not claim it is always the source's first-publication date; a paper revision or newly indexed item may be newer than the original work.

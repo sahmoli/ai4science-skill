@@ -32,6 +32,7 @@ class QueryAI4ScienceTest(unittest.TestCase):
                     ],
                     "title": {"zh": "蛋白质模型", "en": "Protein model"},
                     "summary": {"zh": "包含实验验证。", "en": "Includes experimental validation."},
+                    "summary_type": {"zh": "ai_guide", "en": "ai_guide"},
                     "people": [],
                     "organizations": ["Example Lab"],
                     "source": {"name": "Example Journal"},
@@ -65,6 +66,7 @@ class QueryAI4ScienceTest(unittest.TestCase):
         self.assertEqual(len(events), 1)
         self.assertEqual(events[0]["title"], "蛋白质模型")
         self.assertEqual(events[0]["field"], "生物与医学")
+        self.assertEqual(events[0]["summary_type"], "ai_guide")
 
     def test_fields_array_without_singular_field_still_filters(self):
         payload = {
@@ -105,9 +107,10 @@ class QueryAI4ScienceTest(unittest.TestCase):
         )
         self.assertEqual(len(events), 1)
         self.assertEqual(
-            events[0]["links"]["ai4science"],
+            events[0]["event_url"],
             "https://juanli.me/ai4science/en/events/fields-only/",
         )
+        self.assertNotIn("ai4science", events[0]["links"])
 
     def test_days_zero_includes_archive(self):
         events = MODULE.select_events(

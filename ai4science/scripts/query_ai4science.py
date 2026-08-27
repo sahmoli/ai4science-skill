@@ -96,6 +96,7 @@ def select_events(
 
         title = event.get("title") or {}
         summary = event.get("summary") or {}
+        summary_types = event.get("summary_type") or {}
         selected.append(
             {
                 "id": event.get("id"),
@@ -107,14 +108,12 @@ def select_events(
                 ],
                 "title": title.get(lang),
                 "summary": summary.get(lang),
+                "summary_type": summary_types.get(lang) or "summary",
                 "people": event.get("people") or [],
                 "organizations": event.get("organizations") or [],
                 "source": (event.get("source") or {}).get("name"),
-                "links": {
-                    **(event.get("links") or {}),
-                    "ai4science": event_permalink(event, lang)
-                    or (event.get("links") or {}).get("ai4science"),
-                },
+                "event_url": event_permalink(event, lang),
+                "links": event.get("links") or {},
             }
         )
         if len(selected) >= limit:

@@ -2,7 +2,7 @@
 
 一个面向 Agent 的双语、来源可追溯 AI for Science 信息接口。
 
-这个仓库开放的是 [Juan Li · AI4Science](https://juanli.me/ai4science/) 的**公开阅读层**：已经达到发布标准的事件、中英文标题与编辑摘要、分类，以及原始来源链接。它**不包含**私有的采集、评分、翻译、审校和发布管线。
+这个仓库开放的是 [Juan Li · AI4Science](https://juanli.me/ai4science/) 的**公开阅读层**：已经达到发布标准的事件、中英文标题，以及带 `summary_type` 的导读、摘要或来源摘要、分类和原始来源链接。它**不包含**私有的采集、评分、翻译、审校和发布管线。
 
 [English](README.md) · [Agent 接入页](https://juanli.me/ai4science/agent/)
 

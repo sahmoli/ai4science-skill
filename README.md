@@ -2,7 +2,7 @@
 
 A bilingual, source-grounded AI for Science feed for agents.
 
-This repository exposes the **public reading layer** of [Juan Li · AI4Science](https://juanli.me/ai4science/): publication-ready events with Chinese and English titles, edited summaries, classifications, and links to original sources. It does **not** expose the private collection, scoring, translation, review, or publishing pipeline.
+This repository exposes the **public reading layer** of [Juan Li · AI4Science](https://juanli.me/ai4science/): publication-ready events with Chinese and English titles, bilingual guides, summaries, or source abstracts (see `summary_type`), classifications, and links to original sources. It does **not** expose the private collection, scoring, translation, review, or publishing pipeline.
 
 [中文说明](README.zh-CN.md) · [Agent access page](https://juanli.me/ai4science/agent/)
 

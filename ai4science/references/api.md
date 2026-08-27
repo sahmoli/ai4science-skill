@@ -27,13 +27,21 @@ The top-level object contains:
 Each event contains:
 
 - `id`, `published_at`
-- `field`: `id`, `name_zh`, and `name_en`
+- `fields[]`: zero or more field objects with `id`, `name_zh`, and `name_en`. Prefer this array.
+- `field`: first field object, kept for compatibility when at least one field exists
 - `topics`: zero or more localized topic objects
 - `title`: `zh` and `en`
 - `summary`: `zh` and `en`
+- `summary_type`: `zh` and `en`, one of:
+  - `ai_guide`: site-written or editorially reviewed guide
+  - `source_abstract`: mechanically cleaned source abstract; not an AI4Science original guide
+  - `summary`: public summary whose type is not further determined
 - `people`, `organizations`
 - `source.name`
-- `links.ai4science` and `links.original`
+- `links.permalink.zh` and `links.permalink.en`: bilingual permanent event pages
+- `links.interactive`: hash URL for the interactive app (`#item/{id}`)
+- `links.ai4science`: deprecated alias of the hash URL; still present, still a hash. Do not treat it as the current permalink.
+- `links.original`: primary source
 
 The public schema intentionally excludes ingestion configuration, relevance scores, candidate state, localization state, secrets, and editorial rules.
 
@@ -53,4 +61,4 @@ Field IDs currently include `math`, `biology`, `materials`, `physics`, `climate`
 
 ## Use and verification
 
-Link back to the AI4Science event page when presenting an item. For scientific numbers, methods, results, or quotations, open `links.original` and verify the claim against the primary source.
+Link back to `links.permalink[lang]` or the query script's `event_url` when presenting an item. For scientific numbers, methods, results, or quotations, open `links.original` and verify the claim against the primary source. When `summary_type` is `source_abstract`, say so; do not describe it as an edited guide.
