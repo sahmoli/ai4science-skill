@@ -4,7 +4,7 @@ A bilingual, source-grounded AI for Science feed for agents.
 
 This repository exposes the **public reading layer** of [Juan Li · AI4Science](https://juanli.me/ai4science/): publication-ready events with Chinese and English titles, bilingual guides, summaries, or source abstracts (see `summary_type`), classifications, and links to original sources. It does **not** expose the private collection, scoring, translation, review, or publishing pipeline.
 
-[中文说明](README.zh-CN.md) · [Agent access page](https://juanli.me/ai4science/agent/)
+**[English](README.md) | [简体中文](README.zh-CN.md)** · **[Live Portal (EN)](https://juanli.me/ai4science/en/) · [在线主页（中文）](https://juanli.me/ai4science/zh/) · [Agent Access](https://juanli.me/ai4science/agent/)**
 
 ## Install
 
@@ -48,3 +48,10 @@ into the Skill repository.
 ## License
 
 The Skill code and documentation are available under the [MIT License](LICENSE). Linked source materials remain subject to their respective owners' terms.
+
+
+## Related Open Projects by Juan Li
+
+- **[Juan Li · Academic Homepage](https://juanli.me/)** — Conservation biology & spatial ecology at XJTLU.
+- **[Juan Li · AI4Education](https://juanli.me/ai4education/)** ([`sahmoli/ai4education-skill`](https://github.com/sahmoli/ai4education-skill)) — Bilingual, source-linked reading notes on AI in university, K-12, and family education.
+- **[Juan Li · Seeing Ecology (看见生态)](https://juanli.me/seeing-ecology/)** ([`sahmoli/seeing-ecology`](https://github.com/sahmoli/seeing-ecology)) — Bilingual visual & interactive explainers of core concepts in ecology and conservation biology.

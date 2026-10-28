@@ -4,7 +4,7 @@
 
 这个仓库开放的是 [Juan Li · AI4Science](https://juanli.me/ai4science/) 的**公开阅读层**：已经达到发布标准的事件、中英文标题，以及带 `summary_type` 的导读、摘要或来源摘要、分类和原始来源链接。它**不包含**私有的采集、评分、翻译、审校和发布管线。
 
-[English](README.md) · [Agent 接入页](https://juanli.me/ai4science/agent/)
+**[English](README.md) | [简体中文](README.zh-CN.md)** · **[在线主页（中文）](https://juanli.me/ai4science/zh/) · [English Portal](https://juanli.me/ai4science/en/) · [Agent 接入页](https://juanli.me/ai4science/agent/)**
 
 ## 安装
 
@@ -44,3 +44,10 @@ python3 ai4science/scripts/query_ai4science.py --lang zh --days 7 --field biolog
 ## 许可
 
 Skill 代码与文档采用 [MIT License](LICENSE)。所链接的原始资料仍遵循各自权利人的条款。
+
+
+## 李娟（Juan Li）相关学术与开源项目
+
+- **[Juan Li · 个人学术主页](https://juanli.me/zh/)** —— 西交利物浦大学（XJTLU）保护生物学与空间生态学研究。
+- **[Juan Li · AI4Education](https://juanli.me/ai4education/)**（[`sahmoli/ai4education-skill`](https://github.com/sahmoli/ai4education-skill)）—— AI 与教育（大学、中小学与家庭）的公开阅读札记。
+- **[Juan Li · Seeing Ecology（看见生态）](https://juanli.me/seeing-ecology/)**（[`sahmoli/seeing-ecology`](https://github.com/sahmoli/seeing-ecology)）—— 生态学与保护生物学经典概念的中英双语视觉与交互拆解。

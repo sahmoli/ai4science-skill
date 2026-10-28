@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+title: "AI4Science Skill: Bilingual, Source-Grounded AI for Science Feed for Agents"
+message: "If you use this Skill or public index in research or scientific tooling, please cite it as below."
+type: software
+authors:
+  - family-names: Li
+    given-names: Juan
+    affiliation: "Xi'an Jiaotong-Liverpool University (XJTLU)"
+    orcid: "https://orcid.org/0000-0003-1147-2188"
+repository-code: "https://github.com/sahmoli/ai4science-skill"
+url: "https://juanli.me/ai4science/"
+license: MIT
+version: "1.1.0"
+date-released: "2026-10-28"
